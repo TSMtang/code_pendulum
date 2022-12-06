@@ -58,7 +58,7 @@ end
 
 ## plot coordinate phi and the time derivative phi_dot
 # time
-x = LinRange(1, Integ.timesteps*Integ.delta_t, Integ.timesteps)
+x = LinRange(0, Integ.timesteps*Integ.delta_t, Integ.timesteps)
 # x = x * Integ.delta_t
 # phi
 y1 = Integ.res_phi
