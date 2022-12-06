@@ -11,6 +11,9 @@ using PrettyTables
 using Plots, Printf
 using DelimitedFiles
 using Flux
+using CSV
+using DataFrames
+
 
 ## booleans
 show_video = true
@@ -55,8 +58,8 @@ end
 
 ## plot coordinate phi and the time derivative phi_dot
 # time
-x = LinRange(1, Integ.timesteps, Integ.timesteps)
-x = x * Integ.delta_t
+x = LinRange(1, Integ.timesteps*Integ.delta_t, Integ.timesteps)
+# x = x * Integ.delta_t
 # phi
 y1 = Integ.res_phi
 display(plot(x, y1, xlabel = "time (s)", ylabel = "phi", label = "phi"))
@@ -76,4 +79,5 @@ end
 
 ## Training a neural network
 # training dataset
-X = Integ.res_phi[1 : 0.35 * steps]
+data_pen = DataFrame(time = x,pos = y1)
+CSV.write("C:\\Users\\Proteus\\Desktop\\RWTH\\WISE23\\Code_Pendulum\\CIE\\ProjectA\\code_pendulum\\pendulum.csv",data_pen)
