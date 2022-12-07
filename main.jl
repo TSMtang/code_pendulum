@@ -76,4 +76,13 @@ end
 
 ## Training a neural network
 # training dataset
+# Create DataFrame for the NeuralNetwork
+using DataFrames
+import XLSX
+
+data_pendulum = DataFrame(time_input = x, position_output = y1)
+
+path = "/Users/franzoldopp/Projekte/CIE/code_pendulum_franz/code_pendulum"
+XLSX.writetable(path, collect(eachcol(data_pendulum)), names(data_pendulum))
+
 X = Integ.res_phi[1 : 0.35 * steps]
