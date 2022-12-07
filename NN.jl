@@ -60,3 +60,4 @@ println("Mean real: ", + mean(m(real)), ' ', "Mean fake: ", +  mean(m(fake))) # 
 # Visualizing the model predictions
 scatter(real[1,1:100], real[2,1:100], zcolor=m(real)')
 scatter!(fake[1,1:100], fake[2,1:100], zcolor=m(fake)', legend=false)
+#test
